@@ -12,7 +12,7 @@ return new class() extends Migration {
     {
         Schema::create('config_entries', function (Blueprint $table): void {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('key')->nullable();
             $table->string('value')->nullable();
             $table->string('type')->default('String');
             $table->unsignedBigInteger('group_id')->nullable()->index();

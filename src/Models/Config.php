@@ -24,7 +24,7 @@ class Config
                 $this->config[$group->name] = [];
                 if ($group->entries->isNotEmpty()) {
                     foreach ($group->entries as $entry) {
-                        $this->config[$group->name][$entry->name] = $entry->value;
+                        $this->config[$group->name][$entry->key] = $entry->value;
                     }
                 }
                 if ($group->groups->isNotEmpty()) {
@@ -35,7 +35,7 @@ class Config
                 data_set($this->config, $parent.'.'.$group->name, []);
                 if ($group->entries->isNotEmpty()) {
                     foreach ($group->entries as $entry) {
-                        data_set($this->config, $parent.'.'.$group->name.'.'.$entry->name, $entry->value);
+                        data_set($this->config, $parent.'.'.$group->name.'.'.$entry->key, $entry->value);
                     }
                 }
                 if ($group->groups->isNotEmpty()) {

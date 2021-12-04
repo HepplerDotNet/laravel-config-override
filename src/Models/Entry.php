@@ -80,7 +80,7 @@ class Entry extends Model
         });
     }
 
-    private function getType(): string
+    private function getType(): string | null
     {
         return $this->type;
     }

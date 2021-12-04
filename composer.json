@@ -1,0 +1,45 @@
+{
+  "name": "hepplerdotnet/laravel-config-override",
+  "description": "Package to store Laravel Configuration in Database",
+  "keywords": [
+    "laravel",
+    "laravel config",
+    "laravel config from database"
+  ],
+  "homepage": "https://github.com/HepplerDotNet/laravel-config-override",
+  "license": "MIT",
+  "version": "1.0",
+  "authors": [
+    {
+      "name": "Patrick Heppler",
+      "email": "patrick@heppler.net",
+      "homepage": "https://www.heppler.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~8.0",
+    "laravel/framework": "~8.37"
+  },
+  "require-dev": {
+    "laravel/laravel": "~8.37"
+  },
+  "autoload": {
+    "psr-4": {
+      "HepplerDotNet\\LaravelConfigOverride\\": "src",
+      "Illuminate\\Vendor\\HepplerDotNet\\": "src/Illuminate/Vendor/HepplerDotNet/"
+    }
+  },
+  "scripts": {
+    "pre-autoload-dump": [
+      "@php artisan migrate"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Illuminate\\Vendor\\HepplerDotNet\\Providers\\ConfigurationProvider"
+      ]
+    }
+  }
+}

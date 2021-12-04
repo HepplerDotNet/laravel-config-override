@@ -46,6 +46,11 @@ So using Illuminate namespace was the only working solution. Period.
 
 Run `composer require hepplerdotnet/laravel-config-override`
 
+# Note
+key => values from database will have precedence over config or .env file!
+
+root groups will be merged with existing configuration
+
 # Usage
 Let's say you would change the app locale
 
